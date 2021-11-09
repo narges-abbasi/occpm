@@ -1,0 +1,16 @@
+name: occpm
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pip 
+  - pip:
+    - django
+    - pandas
+    - plantuml
+    - pm4py
+    - pm4pymdl
+    - requests
+    - setuptools
+prefix: /home/jan/anaconda3/envs/occpm
+
