@@ -20,3 +20,10 @@ To run the application execute:
 $ python manage.py runserver 0.0.0.0:8000 
 ```
 
+# Development
+## Migrate
+To properly configure the databases behind django whenever the `INSTALLED_APPS` are changed, the following command should be executed
+```
+python manage.py migrate
+``` 
+
