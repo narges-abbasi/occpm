@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import traceback
+from decouple import config, UndefinedValueError
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c#()x_pgl3k9g#hht^os!rmqxqj4kcfjxf3ofj-f4zkk4t*nk='
+try:
+    SECRET_KEY = config('SECRET_KEY')
+except UndefinedValueError:
+    print(traceback.format_exc())
+    print(f"""Not SECRET_KEY defined in environment, generate one and save in .env, e.g. by executing this in project root:
+     echo -n 'SECRET_KEY=' >> .env ; python3 -c 'import secrets; print(secrets.token_hex(100))' >> .env """)
+    exit()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

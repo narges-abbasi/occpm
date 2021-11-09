@@ -12,5 +12,6 @@ dependencies:
     - pm4pymdl
     - requests
     - setuptools
+    - python-decouple
 prefix: /home/jan/anaconda3/envs/occpm
 
