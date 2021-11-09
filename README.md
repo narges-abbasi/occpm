@@ -14,3 +14,9 @@ If any dependency is missing please add it and only it to `environment.yml` with
 ### Static environment
 If the environment created from `environment.yml` does not work you can try using `environment_static.yml`(which was created using `conda env export > environment_static.yml`) to obtain an environment with the exact versions used during development, however this is not guaranteed to work across OS's and if possible one should not use out-of-date versions of packages.
 
+# Running the server
+To run the application execute:
+```
+$ python manage.py runserver 0.0.0.0:8000 
+```
+
