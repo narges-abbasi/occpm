@@ -13,5 +13,7 @@ dependencies:
     - requests
     - setuptools
     - python-decouple
+    - black
+    - pre-commit
 prefix: /home/jan/anaconda3/envs/occpm
 

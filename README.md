@@ -1,4 +1,6 @@
 # occpm
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 Source code for our project «Object-Centric Comparative Process Mining» in the «Process Discovery Using Python» lab offered at RWTH Aachen University in WS21.
 
 # Installation
