@@ -20,12 +20,40 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+  <script>
+            function setup() {
+                document.getElementById('buttonid').addEventListener('click', openDialog);
+                function openDialog() {
+                    document.getElementById('fileid').click();
+                }
+                document.getElementById('fileid').addEventListener('change', submitForm);
+                function submitForm() {
+                    document.getElementById('formid').submit();
+                }
+            }
+        </script>
 </head>
 
-<body>
-  <h1>
-  This is a test heading
-  </h1>
+<body onload="setup()">
+
+<div style="background-color:white;color:white;padding:1px;height:20px;">
+ <!-- Upload button -->
+	<form id='formid' action="form.php" method="POST" enctype="multipart/form-data"> 
+            <input id='fileid' type='file' name='filename' hidden/>
+            <input id='buttonid' type='button' value='Import' /> 
+            <input type='submit' value='Submit' /> 
+        </form>
+</div> 
+
+<div style="background-color:lightgray;color:white;padding:20px;height: 200px;margin-top: 1%;">
+</div>
+
+<div style="background-color:lightgray;color:white;padding:20px;height: 200px;margin-top: 2%;">
+</div>
+
+<div style="background-color:lightgray;color:white;padding:20px;height: 200px;margin-top: 2%;">
+</div> 
+
 </body>
 </html>
+
